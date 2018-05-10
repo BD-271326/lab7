@@ -3,6 +3,8 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -19,12 +21,16 @@ public class Employee implements Serializable {
 	private String email;
 	private BigDecimal employeeId;
 	private String firstName;
-	private Date hireDate;
+	
 	private String jobId;
 	private String lastName;
 	private BigDecimal managerId;
 	private String phoneNumber;
 	private BigDecimal salary;
+	
+	//@Temporal(TemporalType.DATE)
+	//@Column(name = "HIRE_DATE")
+	private java.util.Date hireDate;
 
 	public Employee() {
 	}
@@ -82,7 +88,8 @@ public class Employee implements Serializable {
 		return this.hireDate;
 	}
 
-	public void setHireDate(Date hireDate) {
+	public void setHireDate(Date hireDate)  {
+		
 		this.hireDate = hireDate;
 	}
 
